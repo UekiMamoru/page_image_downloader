@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "ページイメージダウンローダー",
+  "short_name": "PID",
+  "version": "0.0.1",
+  "default_locale": "ja",
+  "icons": {
+    "128": "/img/logo.png"
+  },
+  "action": {
+    "default_popup": "/action/index.html",
+    "default_icon": {
+      "128": "/img/logo.png"
+    },
+    "default_title": "アクションページ"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "tabs",
+    "download"
+  ],
+  "background": {
+    "service_worker": "/background_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/js/content.js"],
+      "css": ["/css/style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/js/*",
+        "/css/*",
+        "/json/*",
+        "/img/*",
+        "/templates/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_page": "/option/index.html"
+}

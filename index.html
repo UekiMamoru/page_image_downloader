@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .image-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .next-button {
+            display: block;
+            background-color: #00bcd4;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px auto;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .next-button:hover {
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+<div style="display: flex;justify-content:center;flex-wrap: wrap">
+
+    <div style="width: 100%;text-align: center">
+        <h1 id="image-count"></h1>
+
+    </div>
+    <div>
+
+        <label for="height">縦</label>
+        <input type="number" id="height" value="90">
+        <label for="width">横</label>
+        <input type="number" id="width" value="120">
+    </div>
+</div>
+<div id="imagesField" class="gallery"></div>
+<a id="nextButton" class="next-button">次の10件を表示</a>
+
+<script>
+	const imageArray = [
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg',
+		'https://images-fe.ssl-images-amazon.com/images/G/09/AmazonMusic/2023/Marketing/Fan_Rewards_IkimonoGakari/030411-FR-Ikimonogakari-ENG-GW-DC-379x304._SY304_CB594077030_.jpg',
+		'https://m.media-amazon.com/images/I/71YEXN-HfvL._AC_SY200_.jpg',
+		'https://m.media-amazon.com/images/I/51uwZ6KmrnL._AC_SY200_.jpg'
+	];
+
+	const imageCountElement = document.getElementById('image-count');
+	const nextButton = document.getElementById('nextButton');
+	const heightInput = document.getElementById('height');
+	const widthInput = document.getElementById('width');
+
+	let currentIndex = 0;
+
+	function loadImage(src) {
+		return new Promise((resolve, reject) => {
+			const img = new Image();
+			img.src = src;
+			img.onload = () => resolve(img);
+			img.onerror = reject;
+		});
+	}
+
+	function createImageGroup(src, index) {
+		const wrapper = document.createElement('div');
+		wrapper.classList.add('image-group');
+
+		const canvas = document.createElement('canvas');
+		const link = document.createElement('a');
+		link.href = src;
+		link.target = '_blank';
+		link.textContent = '元画像を表示';
+
+		const label = document.createElement('label');
+		const checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		label.appendChild(checkbox);
+		label.appendChild(document.createTextNode('この画像を出力する'));
+
+		wrapper.appendChild(document.createTextNode(`${index + 1}.`));
+		wrapper.appendChild(canvas);
+		wrapper.appendChild(label);
+		wrapper.appendChild(document.createElement('br'));
+		wrapper.appendChild(link);
+
+		loadImage(src).then(img => {
+			const aspectRatio = img.width / img.height;
+			const height = parseInt(heightInput.value, 10);
+			const width = parseInt(widthInput.value, 10);
+			const scale = Math.min(width / img.width, height / img.height);
+
+			canvas.width = img.width * scale;
+			canvas.height = img.height * scale;
+
+			const ctx = canvas.getContext('2d');
+			ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+			checkbox.addEventListener('change', () => {
+				if (!checkbox.checked) return;
+				canvas.toBlob(blob => {
+					console.log(blob);
+				});
+			});
+		});
+
+		return wrapper;
+	}
+
+	function loadImages(start, count) {
+		const imagesField = document.getElementById('imagesField');
+		const endIndex = Math.min(start + count, imageArray.length);
+
+		for (let i = start; i < endIndex; i++) {
+			const imageGroup = createImageGroup(imageArray[i], i);
+			imagesField.appendChild(imageGroup);
+		}
+
+		currentIndex = endIndex;
+		nextButton.textContent = `次の${Math.min(10, imageArray.length - endIndex)}件を表示`;
+
+		if (currentIndex >= imageArray.length) {
+			nextButton.style.display = 'none';
+		}
+	}
+
+	imageCountElement.textContent = `このページで取得できた画像は${imageArray.length}件です。`;
+
+	nextButton.addEventListener('click', () => {
+		loadImages(currentIndex, 10);
+	});
+
+	loadImages(currentIndex, 10);
+</script>
+</body>
+</html>
