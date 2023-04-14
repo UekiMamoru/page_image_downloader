@@ -6,7 +6,9 @@
 	const nextButton = document.getElementById('nextButton');
 	const heightInput = document.getElementById('height');
 	const widthInput = document.getElementById('width');
-	const changeSize = document.getElementById('changeSize')
+	const changeSize = document.getElementById('changeSize');
+	const folder = document.getElementById('folder');
+	const file = document.getElementById('file');
 	let currentIndex = 0;
 	const imagesField = document.getElementById('imagesField');
 	const maxButton = document.getElementById('maxButton')
@@ -87,7 +89,7 @@
 				// });
 
 				const dataURL = canvas.toDataURL('image/png');
-				downloadImage(dataURL,"image"+(index+1)+".png")
+				downloadImage(dataURL,`${folder.value?folder.value+"/":""}${file.value?file.value:"image"}`+(index+1)+".png")
 			});
 		});
 
