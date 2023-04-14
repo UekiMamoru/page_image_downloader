@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+
+
+        body {
+            min-width: 600px;
+            min-height: 300px;
+
+        }
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .image-group {
@@ -47,11 +54,14 @@
         <input type="number" id="height" value="90">
         <label for="width">横</label>
         <input type="number" id="width" value="120">
+        <div>
+            <button id="changeSize">サイズを変える</button>
+        </div>
     </div>
 </div>
 <a id="nextButton" class="next-button">次の10件を表示</a>
 <a id="maxButton" class="next-button">全部表示</a>
 <div id="imagesField" class="gallery"></div>
-
+<script src="../js/action.js"></script>
 </body>
 </html>

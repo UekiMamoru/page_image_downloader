@@ -16,9 +16,7 @@
   },
   "permissions": [
     "storage",
-    "unlimitedStorage",
-    "tabs",
-    "download"
+    "downloads"
   ],
   "background": {
     "service_worker": "/background_worker.js"

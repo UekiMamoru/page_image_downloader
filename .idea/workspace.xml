@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/$CACHE_FILE$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/page_image_downloader.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/background_worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/.sass-cache/e50c6beed8b36403ef156e58e44b09ce0b439a6c/style.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/option/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_locales/ja/message.json" beforeDir="false" afterPath="$PROJECT_DIR$/_locales/ja/messages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2OMGBJx3nCqsQBKHZWWF20DiqG6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\luna\app\git\page_image_downloader" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="" />
+      <created>1681362901191</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681362901191</updated>
+      <workItem from="1681362902283" duration="136000" />
+      <workItem from="1681364939208" duration="136000" />
+      <workItem from="1681425985345" duration="2822000" />
+      <workItem from="1681432884521" duration="4536000" />
+    </task>
+    <task id="LOCAL-00001" summary="サンプル作成">
+      <created>1681362938244</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681362938244</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="サンプル作成" />
+    <option name="LAST_COMMIT_MESSAGE" value="サンプル作成" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1385" y="164" key="CommitChangelistDialog2" timestamp="1681362937557">
+      <screen x="-1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="-1385" y="164" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1681362937557" />
+    <state x="481" y="296" key="EditFileWatcherDialog" timestamp="1681431621555">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="481" y="296" key="EditFileWatcherDialog/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1681431621555" />
+    <state x="620" y="273" key="FileChooserDialogImpl" timestamp="1681432900933">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="273" key="FileChooserDialogImpl/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1681432900933" />
+    <state x="431" y="250" key="Vcs.Push.Dialog.v2" timestamp="1681439436977">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="431" y="250" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1681439436977" />
+  </component>
+</project>
