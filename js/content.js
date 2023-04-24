@@ -1,6 +1,6 @@
 (() => {
+	const imageExtensions = ['png', 'jpg', 'jpeg'];//, 'gif', 'webp'];
 	function extractImageSources() {
-		const imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'webp'];
 		const imageSources = {};
 
 		// Initialize imageSources object
@@ -12,8 +12,8 @@
 		const imgElements = document.getElementsByTagName('img');
 		for (const imgElement of imgElements) {
 			const src = imgElement.src;
-			const extension = src.split('.').pop().toLowerCase();
-			if (imageExtensions.includes(extension)) {
+			const extension = filterImageExtensions(src.split('.').pop().toLowerCase());
+			if (extension) {
 				imageSources[extension].add(src);
 			}
 		}
@@ -25,8 +25,8 @@
 			if (srcset) {
 				const sources = srcset.split(',').map(src => src.trim().split(' ')[0]);
 				sources.forEach(src => {
-					const extension = src.split('.').pop().toLowerCase();
-					if (imageExtensions.includes(extension)) {
+					const extension = filterImageExtensions(src.split('.').pop().toLowerCase());
+					if (extension) {
 						imageSources[extension].add(src);
 					}
 				});
@@ -43,8 +43,8 @@
 				const matches = backgroundImage.match(/url\("?(.+?)"?\)/);
 				if (matches) {
 					const src = matches[1];
-					const extension = src.split('.').pop().toLowerCase();
-					if (imageExtensions.includes(extension)) {
+					const extension = filterImageExtensions(src.split('.').pop().toLowerCase());
+					if (extension) {
 						imageSources[extension].add(src);
 					}
 				}
@@ -55,14 +55,22 @@
 		for (const imgElement of imgElements) {
 			const lazyLoadSrc = imgElement.dataset.src || imgElement.getAttribute('data-src');
 			if (lazyLoadSrc) {
-				const extension = lazyLoadSrc.split('.').pop().toLowerCase();
-				if (imageExtensions.includes(extension)) {
+				const extension =filterImageExtensions(lazyLoadSrc.split('.').pop().toLowerCase());
+				if (extension) {
 					imageSources[extension].add(lazyLoadSrc);
 				}
 			}
 		}
 
 		return imageSources;
+	}
+
+	function filterImageExtensions(str = ""){
+		let checkStr = str;
+		if(~str.indexOf("?")){
+			checkStr = str.split("?")[0]
+		}
+		return imageExtensions.includes(checkStr)?checkStr:false;
 	}
 
 	chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
