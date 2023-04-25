@@ -67,7 +67,7 @@
 		const checkbox = document.createElement('input');
 		checkbox.type = 'checkbox';
 		label.appendChild(checkbox);
-		label.appendChild(document.createTextNode('この画像を出力する'));
+		label.appendChild(document.createTextNode('この画像を出力'));
 		const imgIndex = document.createElement('span');
 		imgIndex.textContent = `${index+1}.`
 		headerWrap.appendChild(imgIndex);
@@ -95,8 +95,8 @@
 				informationTableHTMLStr(img.height,img.width,blob.size));
 
 			const aspectRatio = img.width / img.height;
-			const height = parseInt(heightInput.value, 10);
-			const width = parseInt(widthInput.value, 10);
+			const height =90;// parseInt(heightInput.value, 10);
+			const width = 120;//parseInt(widthInput.value, 10);
 			const scale = Math.min(width / img.width, height / img.height);
 
 			canvas.width = img.width * scale;
@@ -107,10 +107,15 @@
 
 			checkbox.addEventListener('change', () => {
 				if (!checkbox.checked) return;
-				// canvas.toBlob(blob => {
-				// 	console.log(blob);
-				// });
+				const canvas = document.createElement('canvas');
+				const height = parseInt(heightInput.value, 10);
+				const width = parseInt(widthInput.value, 10);
+				const scale = Math.min(width / img.width, height / img.height);
 
+				canvas.width = img.width * scale;
+				canvas.height = img.height * scale;
+				const ctx = canvas.getContext('2d');
+				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 				const dataURL = canvas.toDataURL('image/png');
 				downloadImage(dataURL,`${folder.value?folder.value+"/":""}${file.value?file.value:"image"}`+(index+1)+".png")
 			});

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="ダウンローダーの見た目をわかりやすく修正">
+    <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/action/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <workItem from="1681432884521" duration="8342000" />
       <workItem from="1682295582162" duration="5714000" />
       <workItem from="1682379852551" duration="3198000" />
-      <workItem from="1682383635883" duration="1479000" />
+      <workItem from="1682383635883" duration="2578000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -102,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682384797309</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ダウンローダーの見た目をわかりやすく修正">
+      <created>1682385188594</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682385188594</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,10 +123,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="ダウンローダーの見た目をわかりやすく修正" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1385" y="164" key="CommitChangelistDialog2" timestamp="1682384905086">
+    <state x="-1385" y="164" key="CommitChangelistDialog2" timestamp="1682385188023">
       <screen x="-1920" y="0" width="1920" height="1160" />
     </state>
-    <state x="-1385" y="164" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1682384905086" />
+    <state x="-1385" y="164" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1682385188023" />
     <state x="468" y="143" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682319559295" />
     <state x="481" y="296" key="EditFileWatcherDialog" timestamp="1681431621555">
       <screen x="0" y="0" width="1680" height="1010" />
@@ -128,9 +136,14 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="273" key="FileChooserDialogImpl/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682303027257" />
-    <state x="431" y="250" key="Vcs.Push.Dialog.v2" timestamp="1682319561640">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="-1427" y="287" key="Vcs.Push.Dialog.v2" timestamp="1682385190023">
+      <screen x="-1920" y="0" width="1920" height="1160" />
     </state>
+    <state x="-1427" y="287" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1682385190022" />
     <state x="431" y="250" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682319561640" />
+    <state x="-1231" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1682385183452">
+      <screen x="-1920" y="0" width="1920" height="1160" />
+    </state>
+    <state x="-1231" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1682385183452" />
   </component>
 </project>
