@@ -30,6 +30,7 @@
             flex-direction: column;
             border: solid 1px;
             padding: 10px;
+            padding-bottom: 0;
             margin-left:-1px;
             margin-bottom:-1px
         }
@@ -41,14 +42,14 @@
             padding: 10px 20px;
             border-radius: 5px;
             text-align: center;
-            margin: 20px auto;
+            margin: 6px auto 20px;
             cursor: pointer;
             text-decoration: none;
             transition: opacity 0.3s;
             flex: 1;
         }
 
-        .next-button:hover {
+        .button:hover {
             opacity: 0.6;
         }
 
@@ -71,12 +72,18 @@
             width: 100%;
             padding-bottom: 6px;
         }
+        .informationTableWrapper{
+            width: calc(100% + 20px);
+            transform: translateX(-10px);
+
+        }
         .informationTable{
             width: 100%;
             border-collapse: collapse;
         }
         .informationTable th{
             text-align: left;
+            background: #ffd5af;
         }
         .informationTable td{
             text-align: right;
@@ -118,8 +125,8 @@
     <a id="maxButton" class="button">全部表示</a>
 </div>
 <div id="imagesField" class="gallery"></div>
-<div style="position: fixed;left: 0;bottom: 0;padding: 6px;background: #ffcaca;width: 100%">
-    <p style="padding-bottom: 6px;margin-bottom: 6px;border-bottom: solid 1px white;font-weight: bold;color: black">☆出力設定</p>
+<div style="position: fixed;left: 0;bottom: 0;padding: 6px;padding-top:0;background: #ffd5af;width: 100%">
+    <p style="margin:0;padding-bottom: 6px;margin-bottom: 6px;border-bottom: solid 1px white;font-weight: bold;color: black">☆出力設定</p>
     <div style="display: flex;width: 100%;">
         <div style="flex: 1;"><label>フォルダ名:<input type="text" value="" id="folder"></label></div>
         <div style="flex: 1;"><label>ファイル名:<input type="text" value="image" id="file"></label>.png</div>

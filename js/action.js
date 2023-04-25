@@ -79,6 +79,7 @@
 		const linkWrap = document.createElement('div');
 		const labelWrap = document.createElement('div');
 		const sizeWrap = document.createElement('div');
+		sizeWrap.classList.add("informationTableWrapper")
 		optionWrap.classList.add("option-field");
 		wrapper.appendChild(optionWrap)
 		labelWrap.appendChild(label);
