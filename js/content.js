@@ -14,7 +14,8 @@
 			const src = imgElement.src;
 			const extension = filterImageExtensions(src.split('.').pop().toLowerCase());
 			if (extension) {
-				imageSources[extension].add(src);
+
+				imageSources[extension].add(bindProtocol(src));
 			}
 		}
 
@@ -27,7 +28,7 @@
 				sources.forEach(src => {
 					const extension = filterImageExtensions(src.split('.').pop().toLowerCase());
 					if (extension) {
-						imageSources[extension].add(src);
+						imageSources[extension].add(bindProtocol(src));
 					}
 				});
 			}
@@ -45,7 +46,7 @@
 					const src = matches[1];
 					const extension = filterImageExtensions(src.split('.').pop().toLowerCase());
 					if (extension) {
-						imageSources[extension].add(src);
+						imageSources[extension].add(bindProtocol(src));
 					}
 				}
 			}
@@ -57,7 +58,7 @@
 			if (lazyLoadSrc) {
 				const extension =filterImageExtensions(lazyLoadSrc.split('.').pop().toLowerCase());
 				if (extension) {
-					imageSources[extension].add(lazyLoadSrc);
+					imageSources[extension].add(bindProtocol(lazyLoadSrc));
 				}
 			}
 		}
@@ -71,6 +72,13 @@
 			checkStr = str.split("?")[0]
 		}
 		return imageExtensions.includes(checkStr)?checkStr:false;
+	}
+
+	function bindProtocol(src = ""){
+		if(src.match(/^\/\//)){
+			return  window.location.protocol+src;
+		}
+		return src;
 	}
 
 	chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
