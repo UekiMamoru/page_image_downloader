@@ -93,6 +93,28 @@
             padding: 3px;
             border: solid 1px #ccc;
         }
+        .eventBtnWrap{display: flex;gap:3px;margin: 3px;
+            width: calc(100% + 14px);
+            transform: translateX(-10px);}
+        .eventBtnWrap>div{
+            flex: 1;
+            text-align: center;
+            border-radius: 3px;
+            color: white;
+            background: #ff5b5b;
+            padding: 3px 3px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: bold;
+            transition: opacity .3s;
+        }
+
+        .eventBtnWrap>div:hover{
+            opacity: 0.7;
+        }
+        .eventBtnWrap>div:first-child{
+            background: #00bcd4;
+        }
     </style>
 </head>
 <body>

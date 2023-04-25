@@ -88,10 +88,19 @@
 		link.textContent = '元画像を表示';
 
 		const label = document.createElement('label');
-		const checkbox = document.createElement('input');
-		checkbox.type = 'checkbox';
-		label.appendChild(checkbox);
-		label.appendChild(document.createTextNode('この画像を出力'));
+		// const checkbox = document.createElement('input');
+		// checkbox.type = 'checkbox';
+		// label.appendChild(checkbox);
+		// label.appendChild(document.createTextNode('この画像を出力'));
+		const originalSizeEvBtn = document.createElement("div");
+		originalSizeEvBtn.textContent=`元画像DL`;
+		const customSizeEvBtn = document.createElement("div");
+		customSizeEvBtn.textContent=`リサイズDL`;
+		const eventBtnWrap = document.createElement("div");
+		eventBtnWrap.appendChild(originalSizeEvBtn);
+		eventBtnWrap.appendChild(customSizeEvBtn);
+		eventBtnWrap.classList.add("eventBtnWrap")
+		// wrapper.appendChild()
 		const imgIndex = document.createElement('span');
 		imgIndex.textContent = `${index + 1}.`
 		headerWrap.appendChild(imgIndex);
@@ -106,10 +115,11 @@
 		sizeWrap.classList.add("informationTableWrapper")
 		optionWrap.classList.add("option-field");
 		wrapper.appendChild(optionWrap)
-		labelWrap.appendChild(label);
+		// labelWrap.appendChild(label);
 		// linkWrap.appendChild(link);
 		// optionWrap.appendChild(linkWrap);
-		optionWrap.appendChild(labelWrap);
+		// optionWrap.appendChild(labelWrap);
+		optionWrap.appendChild(eventBtnWrap);
 		optionWrap.appendChild(sizeWrap);
 		sizeWrap.innerHTML = informationTableHTMLStr("-", "-", "-")
 		loadImage(src).then(img => {
@@ -126,9 +136,23 @@
 
 			const ctx = canvas.getContext('2d');
 			ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+			//
+			// checkbox.addEventListener('change', () => {
+			// 	if (!checkbox.checked) return;
+			// 	const canvas = document.createElement('canvas');
+			// 	const height = parseInt(heightInput.value, 10);
+			// 	const width = parseInt(widthInput.value, 10);
+			// 	const scale = Math.min(width / img.width, height / img.height);
+			//
+			// 	canvas.width = img.width * scale;
+			// 	canvas.height = img.height * scale;
+			// 	const ctx = canvas.getContext('2d');
+			// 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+			// 	const dataURL = canvas.toDataURL('image/png');
+			// 	downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
+			// });
 
-			checkbox.addEventListener('change', () => {
-				if (!checkbox.checked) return;
+			customSizeEvBtn.addEventListener('click', () => {
 				const canvas = document.createElement('canvas');
 				const height = parseInt(heightInput.value, 10);
 				const width = parseInt(widthInput.value, 10);
@@ -136,6 +160,15 @@
 
 				canvas.width = img.width * scale;
 				canvas.height = img.height * scale;
+				const ctx = canvas.getContext('2d');
+				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+				const dataURL = canvas.toDataURL('image/png');
+				downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
+			});
+			originalSizeEvBtn.addEventListener('click', () => {
+				const canvas = document.createElement('canvas');
+				canvas.width = img.width;
+				canvas.height = img.height;
 				const ctx = canvas.getContext('2d');
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 				const dataURL = canvas.toDataURL('image/png');
