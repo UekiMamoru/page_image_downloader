@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="SCSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -63,7 +63,9 @@
       <workItem from="1681364939208" duration="136000" />
       <workItem from="1681425985345" duration="2822000" />
       <workItem from="1681432884521" duration="8342000" />
-      <workItem from="1682295582162" duration="4255000" />
+      <workItem from="1682295582162" duration="5714000" />
+      <workItem from="1682379852551" duration="3198000" />
+      <workItem from="1682383635883" duration="1020000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -86,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681443793703</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ロゴの変更とGETクエリが付いていた場合に画像として認識していない点を修正">
+      <created>1682319559887</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682319559887</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,14 +103,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="サンプル作成" />
-    <option name="LAST_COMMIT_MESSAGE" value="サンプル作成" />
+    <MESSAGE value="ロゴの変更とGETクエリが付いていた場合に画像として認識していない点を修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="ロゴの変更とGETクエリが付いていた場合に画像として認識していない点を修正" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="468" y="143" key="CommitChangelistDialog2" timestamp="1681443793120">
+    <state x="468" y="143" key="CommitChangelistDialog2" timestamp="1682319559295">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="-1385" y="164" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1681362937557" />
-    <state x="468" y="143" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1681443793120" />
+    <state x="468" y="143" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682319559295" />
     <state x="481" y="296" key="EditFileWatcherDialog" timestamp="1681431621555">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -110,9 +120,9 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="273" key="FileChooserDialogImpl/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682303027257" />
-    <state x="431" y="250" key="Vcs.Push.Dialog.v2" timestamp="1681443856805">
+    <state x="431" y="250" key="Vcs.Push.Dialog.v2" timestamp="1682319561640">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="431" y="250" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1681443856805" />
+    <state x="431" y="250" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682319561640" />
   </component>
 </project>

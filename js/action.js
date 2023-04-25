@@ -22,11 +22,12 @@
 		currentIndex = 0;
 		loadImages(currentIndex, 10)
 	})
+
 	chrome.runtime.sendMessage({captureImg: true})
 		.then(result => {
 			imageArray = result;
 			imagesField.innerHTML = ""
-			imageCountElement.textContent = `このページで取得できた画像は${imageArray.length}件です。`;
+			imageCountElement.textContent = `開いているページで取得できた画像は${imageArray.length}件です。`;
 
 
 			loadImages(currentIndex, 10);
@@ -53,6 +54,10 @@
 		wrapper.classList.add('image-group');
 
 		const canvas = document.createElement('canvas');
+		const headerWrap = document.createElement('div');
+		headerWrap.classList.add('image-group_header')
+		const canvasWarp = document.createElement('div');
+		canvasWarp.classList.add("canvas-wrap")
 		const link = document.createElement('a');
 		link.href = src;
 		link.target = '_blank';
@@ -63,14 +68,31 @@
 		checkbox.type = 'checkbox';
 		label.appendChild(checkbox);
 		label.appendChild(document.createTextNode('この画像を出力する'));
-
-		wrapper.appendChild(document.createTextNode(`${index + 1}.`));
-		wrapper.appendChild(canvas);
-		wrapper.appendChild(label);
-		wrapper.appendChild(document.createElement('br'));
-		wrapper.appendChild(link);
-
+		const imgIndex = document.createElement('span');
+		imgIndex.textContent = `${index+1}.`
+		headerWrap.appendChild(imgIndex);
+		headerWrap.appendChild(link)
+		wrapper.appendChild(headerWrap)
+		canvasWarp.appendChild(canvas)
+		wrapper.appendChild(canvasWarp);
+		const optionWrap = document.createElement("div");
+		const linkWrap = document.createElement('div');
+		const labelWrap = document.createElement('div');
+		const sizeWrap = document.createElement('div');
+		optionWrap.classList.add("option-field");
+		wrapper.appendChild(optionWrap)
+		labelWrap.appendChild(label);
+		// linkWrap.appendChild(link);
+		// optionWrap.appendChild(linkWrap);
+		optionWrap.appendChild(labelWrap);
+		optionWrap.appendChild(sizeWrap);
+		sizeWrap.innerHTML =informationTableHTMLStr("-","-","-")
 		loadImage(src).then(img => {
+			fetch( src ).
+			then( res => res.blob() ).
+			then( blob => sizeWrap.innerHTML =
+				informationTableHTMLStr(img.height,img.width,blob.size));
+
 			const aspectRatio = img.width / img.height;
 			const height = parseInt(heightInput.value, 10);
 			const width = parseInt(widthInput.value, 10);
@@ -94,6 +116,15 @@
 		});
 
 		return wrapper;
+	}
+
+	function informationTableHTMLStr(height,width,byte){
+		return `<table class="informationTable">
+					<thead></thead>
+					<tbody>
+						<tr><th>縦</th><td>${height}px</td><th>横</th><td>${width}px</td></tr>
+						<tr><th colspan="2">容量</th><td colspan="2">${byte}Byte</td></tr>	
+					</tbody></table>`
 	}
 
 		function downloadImage(blobURL, filename) {

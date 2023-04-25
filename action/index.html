@@ -4,26 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-
+        *{
+            box-sizing: border-box;
+        }
 
         body {
-            min-width: 600px;
+            min-width: 610px;
             min-height: 300px;
+            margin: 0;
+            padding: 6px;
+            padding-bottom: 7em;
+
 
         }
         .gallery {
             display: flex;
-            gap: 10px;
+
             flex-wrap: wrap;
+            margin: auto;
+            justify-content: left;
         }
 
         .image-group {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            border: solid 1px;
+            padding: 10px;
+            margin-left:-1px;
+            margin-bottom:-1px
         }
 
-        .next-button {
+        .button {
             display: block;
             background-color: #00bcd4;
             color: #ffffff;
@@ -34,40 +45,86 @@
             cursor: pointer;
             text-decoration: none;
             transition: opacity 0.3s;
+            flex: 1;
         }
 
         .next-button:hover {
             opacity: 0.6;
+        }
+
+        .gallery .image-group .canvas-wrap{
+            padding-bottom: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 96px;
+        }
+
+        [type=number]{
+            width: 7em;
+            text-align: right;
+        }
+        .image-group_header{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 6px;
+        }
+        .informationTable{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .informationTable th{
+            text-align: left;
+        }
+        .informationTable td{
+            text-align: right;
+        }
+        .informationTable th,.informationTable td{
+            padding: 3px;
+            border: solid 1px #ccc;
         }
     </style>
 </head>
 <body>
 <div style="display: flex;justify-content:center;flex-wrap: wrap">
 
-    <div style="width: 100%;text-align: center">
-        <h1 id="image-count"></h1>
-
+    <div style="width: 100%;text-align: center;border-bottom: solid 2px #00bcd4">
+        <h1 id="image-count" style="margin: 0;font-size: 18px"></h1>
     </div>
     <div style="width: 100%;align-items: center;gap: 6px">
 
-        <div style="display:flex;">
-        <label for="height">縦</label>
-        <input type="number" id="height" value="90" size="5">
-        <label for="width">横</label>
-        <input type="number" id="width" value="120" size="5">
-        <div>
+        <div style="display:flex; justify-content:right; gap:1em;align-items: center">    <p>ダウンロードサイズを指定</p>
+            <div>
+                <label for="height">縦</label>
+                <input type="number" id="height" value="90" size="3">px
+            </div>
+            <div>
+                ×
+            </div>
+            <div>
+                <label for="width">横</label>
+                <input type="number" id="width" value="120" size="3">px
+            </div>
+        <div style="display: none">
             <button id="changeSize">サイズを変える</button>
         </div>
         </div>
-        <div style="display: flex;margin: 10px;width: 100%;">
-            <div style="flex: 1;border: solid 1px #ccc"><label>フォルダ名指定:<input type="text" value="" id="folder"></label></div>
-            <div style="flex: 1;border: solid 1px #ccc"><label>ファイル名:<input type="text" value="image" id="file"></label></div>
-        </div>
     </div>
 </div>
-<a id="nextButton" class="next-button">次の10件を表示</a>
-<a id="maxButton" class="next-button">全部表示</a>
+<div style="display: flex;gap: 1em;">
+    <a id="nextButton" class="button">次の10件を表示</a>
+    <a id="maxButton" class="button">全部表示</a>
+</div>
 <div id="imagesField" class="gallery"></div>
+<div style="position: fixed;left: 0;bottom: 0;padding: 6px;background: #ffcaca;width: 100%">
+    <p style="padding-bottom: 6px;margin-bottom: 6px;border-bottom: solid 1px white;font-weight: bold;color: black">☆出力設定</p>
+    <div style="display: flex;width: 100%;">
+        <div style="flex: 1;"><label>フォルダ名:<input type="text" value="" id="folder"></label></div>
+        <div style="flex: 1;"><label>ファイル名:<input type="text" value="image" id="file"></label>.png</div>
+    </div>
+</div>
 <script src="../js/action.js"></script>
 </body>
 </html>
