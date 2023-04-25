@@ -44,6 +44,21 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 			})
 
 		}
+	} else if(message.hasOwnProperty("resizeSize") && message.resizeSize){
+		if (message.type === "set") {
+			chrome.storage.local.set({resizeSize:message.size}, () => {
+			})
+		} else if (message.type === "get") {
+			let list = ["resizeSize"]
+			chrome.storage.local.get(list, (result) => {
+				let resizeSize = result["resizeSize"]
+				if(!resizeSize){
+					resizeSize = {width:120,height:90}
+				}
+				sendResponse(resizeSize);
+			})
+		}
+
 	}
 	return true;
 });

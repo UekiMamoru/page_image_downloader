@@ -22,6 +22,30 @@
 		currentIndex = 0;
 		loadImages(currentIndex, 10)
 	})
+	chrome.runtime.sendMessage({resizeSize: true, type: "get"})
+		.then(size => {
+			let width = size.width;
+			let height = size.height;
+			widthInput.value = parseInt(width);
+			heightInput.value = parseInt(height);
+
+			heightInput.addEventListener("change", () => {
+				let inputHeight = parseInt(heightInput.value)
+				if (inputHeight && inputHeight > 0) {
+					size.height = inputHeight;
+					chrome.runtime.sendMessage({resizeSize: true, type: "set", size})
+				}
+
+			})
+			widthInput.addEventListener("change", () => {
+				let inputWidth = parseInt(widthInput.value)
+				if (inputWidth && inputWidth > 0) {
+					size.width = inputWidth;
+					chrome.runtime.sendMessage({resizeSize: true, type: "set", size})
+				}
+
+			})
+		})
 
 	chrome.runtime.sendMessage({captureImg: true})
 		.then(result => {
@@ -69,7 +93,7 @@
 		label.appendChild(checkbox);
 		label.appendChild(document.createTextNode('この画像を出力'));
 		const imgIndex = document.createElement('span');
-		imgIndex.textContent = `${index+1}.`
+		imgIndex.textContent = `${index + 1}.`
 		headerWrap.appendChild(imgIndex);
 		headerWrap.appendChild(link)
 		wrapper.appendChild(headerWrap)
@@ -87,15 +111,13 @@
 		// optionWrap.appendChild(linkWrap);
 		optionWrap.appendChild(labelWrap);
 		optionWrap.appendChild(sizeWrap);
-		sizeWrap.innerHTML =informationTableHTMLStr("-","-","-")
+		sizeWrap.innerHTML = informationTableHTMLStr("-", "-", "-")
 		loadImage(src).then(img => {
-			fetch( src ).
-			then( res => res.blob() ).
-			then( blob => sizeWrap.innerHTML =
-				informationTableHTMLStr(img.height,img.width,blob.size));
+			fetch(src).then(res => res.blob()).then(blob => sizeWrap.innerHTML =
+				informationTableHTMLStr(img.height, img.width, blob.size));
 
 			const aspectRatio = img.width / img.height;
-			const height =90;// parseInt(heightInput.value, 10);
+			const height = 90;// parseInt(heightInput.value, 10);
 			const width = 120;//parseInt(widthInput.value, 10);
 			const scale = Math.min(width / img.width, height / img.height);
 
@@ -117,14 +139,14 @@
 				const ctx = canvas.getContext('2d');
 				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 				const dataURL = canvas.toDataURL('image/png');
-				downloadImage(dataURL,`${folder.value?folder.value+"/":""}${file.value?file.value:"image"}`+(index+1)+".png")
+				downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
 			});
 		});
 
 		return wrapper;
 	}
 
-	function informationTableHTMLStr(height,width,byte){
+	function informationTableHTMLStr(height, width, byte) {
 		return `<table class="informationTable">
 					<thead></thead>
 					<tbody>
@@ -133,19 +155,19 @@
 					</tbody></table>`
 	}
 
-		function downloadImage(blobURL, filename) {
-			chrome.downloads.download({
-				url: blobURL,
-				filename: filename,
-				// saveAs: true
-			}, function (downloadId) {
-				if (chrome.runtime.lastError) {
-					console.error(chrome.runtime.lastError);
-				} else {
-					console.log('Download started with ID: ', downloadId);
-				}
-			});
-		}
+	function downloadImage(blobURL, filename) {
+		chrome.downloads.download({
+			url: blobURL,
+			filename: filename,
+			// saveAs: true
+		}, function (downloadId) {
+			if (chrome.runtime.lastError) {
+				console.error(chrome.runtime.lastError);
+			} else {
+				console.log('Download started with ID: ', downloadId);
+			}
+		});
+	}
 
 
 	function loadImages(start, count) {
