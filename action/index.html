@@ -156,6 +156,9 @@
         #modeParent[data-mode="multiple"] .image-group.selected .multipleActiveImg {
             opacity: .8;
         }
+        #modeParent[data-mode="multiple"] .image-group.selected canvas {
+            opacity: .5;
+        }
 
         .multipleTxt {
             text-align: center;
@@ -264,7 +267,7 @@
 </div>
 <div id="imagesField" class="gallery"></div>
 <div class="fixFooter"
-     style="position: fixed;left: 0;bottom: 0;padding: 6px;padding-top:0;background: #ffd5af;width: 100%">
+     style="position: fixed;left: 0;bottom: 0;padding: 6px;padding-top:0;background: #ffd5af;width: 100%;z-index: 1000">
     <div style="align-items: center; margin:0;padding-bottom: 6px;margin-bottom: 6px;border-bottom: solid 1px white;font-weight: bold;color: black;display: flex;justify-content: space-between">
         <p>☆出力設定</p>
         <div class="eventBtnWrap">

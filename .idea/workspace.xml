@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/check.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/action/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,17 +39,17 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\luna\app\git\page_image_downloader" />
@@ -74,7 +71,8 @@
       <workItem from="1682379852551" duration="3198000" />
       <workItem from="1682383635883" duration="10667000" />
       <workItem from="1682903437148" duration="275000" />
-      <workItem from="1682903913590" duration="4565000" />
+      <workItem from="1682903913590" duration="5285000" />
+      <workItem from="1682921627257" duration="339000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -146,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682402480366</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="複数選択を実装。">
+      <created>1682908683919</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682908683919</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +165,7 @@
     <MESSAGE value="サイズを記憶するようにした" />
     <MESSAGE value="ダウンロード実行ボタンを追加。チェックボックス廃止。&#10;原寸ダウンロード追加。" />
     <MESSAGE value="プロトコル指定がないPathが指定されていた場合に、現在のプロトコルを取得して追加するように変更" />
-    <option name="LAST_COMMIT_MESSAGE" value="プロトコル指定がないPathが指定されていた場合に、現在のプロトコルを取得して追加するように変更" />
+    <MESSAGE value="複数選択を実装。" />
+    <option name="LAST_COMMIT_MESSAGE" value="複数選択を実装。" />
   </component>
 </project>
