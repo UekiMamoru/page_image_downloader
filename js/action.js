@@ -1,7 +1,11 @@
 (() => {
 
 	let imageArray = [];
-
+	let imgBuff = {}
+	const MODE_SINGLE = "single", MODE_MULTIPLE = "multiple"
+	let mode = MODE_SINGLE;
+	const modeBtns = document.querySelectorAll(".mode");
+	const modeParent = document.getElementById("modeParent")
 	const imageCountElement = document.getElementById('image-count');
 	const nextButton = document.getElementById('nextButton');
 	const heightInput = document.getElementById('height');
@@ -12,6 +16,30 @@
 	let currentIndex = 0;
 	const imagesField = document.getElementById('imagesField');
 	const maxButton = document.getElementById('maxButton')
+	const multipleDLBtnWrap = document.querySelector(".fixFooter .eventBtnWrap");
+	const multipleDLBtnDef = multipleDLBtnWrap.querySelector(".def")
+	const multipleDLBtnResize = multipleDLBtnWrap.querySelector(".resize")
+	multipleDLBtnDef.addEventListener("click", () => {
+		if (confirm("選択画像を[ 元サイズ ]で一括ダウンロードしてよろしいですか？")) {
+			let imageGroups = imagesField.querySelectorAll(".image-group");
+			imageGroups.forEach((elem, index) => {
+				if (elem.classList.contains("selected")) {
+					originalDownload(imgBuff[elem.getAttribute("data-img")], index)
+				}
+			})
+		}
+	})
+	multipleDLBtnResize.addEventListener("click", () => {
+		if (confirm("選択画像を[ 指定サイズ ]でリサイズして一括ダウンロードしてよろしいですか？")) {
+			let imageGroups = imagesField.querySelectorAll(".image-group");
+			imageGroups.forEach((elem, index) => {
+				if (elem.classList.contains("selected")) {
+
+					resizeDownload(imgBuff[elem.getAttribute("data-img")], index)
+				}
+			})
+		}
+	})
 	imageCountElement.textContent = `現在取得中...`;
 	maxButton.addEventListener("click", () => {
 		loadImages(currentIndex, imageArray.length - 1)
@@ -21,6 +49,17 @@
 		imagesField.innerHTML = ""
 		currentIndex = 0;
 		loadImages(currentIndex, 10)
+	})
+	modeBtns.forEach((modeElm) => {
+		modeElm.addEventListener("click", (ev) => {
+			//　現在のアクティブなら何もしない
+			if (ev.target.getAttribute("data-mode") === modeParent.getAttribute("data-mode")) {
+				return
+			}
+			// 異なったら変更
+			mode = ev.target.getAttribute("data-mode");
+			modeParent.setAttribute("data-mode", mode);
+		})
 	})
 	chrome.runtime.sendMessage({resizeSize: true, type: "get"})
 		.then(size => {
@@ -81,26 +120,37 @@
 		const headerWrap = document.createElement('div');
 		headerWrap.classList.add('image-group_header')
 		const canvasWarp = document.createElement('div');
-		canvasWarp.classList.add("canvas-wrap")
+		const multipleActiveImg = document.createElement("img");
+		multipleActiveImg.setAttribute("data-mode", "multiple");
+		multipleActiveImg.src = `${chrome.runtime.getURL("img/check.png")}`
+		multipleActiveImg.classList.add("multipleActiveImg")
+
+		canvasWarp.appendChild(multipleActiveImg);
+		canvasWarp.classList.add("canvas-wrap");
 		const link = document.createElement('a');
 		link.href = src;
 		link.target = '_blank';
 		link.textContent = '元画像を表示';
 
-		const label = document.createElement('label');
-		// const checkbox = document.createElement('input');
-		// checkbox.type = 'checkbox';
-		// label.appendChild(checkbox);
-		// label.appendChild(document.createTextNode('この画像を出力'));
 		const originalSizeEvBtn = document.createElement("div");
-		originalSizeEvBtn.textContent=`元画像DL`;
+		originalSizeEvBtn.textContent = `元画像DL`;
 		const customSizeEvBtn = document.createElement("div");
-		customSizeEvBtn.textContent=`リサイズDL`;
-		const eventBtnWrap = document.createElement("div");
-		eventBtnWrap.appendChild(originalSizeEvBtn);
-		eventBtnWrap.appendChild(customSizeEvBtn);
-		eventBtnWrap.classList.add("eventBtnWrap")
-		// wrapper.appendChild()
+		customSizeEvBtn.textContent = `リサイズDL`;
+		const singleEventBtnsWrap = document.createElement("div");
+		singleEventBtnsWrap.appendChild(originalSizeEvBtn);
+		singleEventBtnsWrap.appendChild(customSizeEvBtn);
+		singleEventBtnsWrap.classList.add("eventBtnWrap")
+		singleEventBtnsWrap.classList.add("modeBtns")
+		singleEventBtnsWrap.setAttribute("data-mode", "single");
+		const multipleText = document.createElement("div");
+		multipleText.textContent = `画像クリックで選択`;
+		const multipleEventBtnsWrap = document.createElement("div");
+		multipleEventBtnsWrap.appendChild(multipleText);
+		multipleEventBtnsWrap.classList.add("multipleTxt");
+		multipleEventBtnsWrap.setAttribute("data-mode", "multiple")
+		multipleEventBtnsWrap.classList.add("modeBtns")
+
+
 		const imgIndex = document.createElement('span');
 		imgIndex.textContent = `${index + 1}.`
 		headerWrap.appendChild(imgIndex);
@@ -109,23 +159,19 @@
 		canvasWarp.appendChild(canvas)
 		wrapper.appendChild(canvasWarp);
 		const optionWrap = document.createElement("div");
-		const linkWrap = document.createElement('div');
-		const labelWrap = document.createElement('div');
 		const sizeWrap = document.createElement('div');
 		sizeWrap.classList.add("informationTableWrapper")
 		optionWrap.classList.add("option-field");
 		wrapper.appendChild(optionWrap)
-		// labelWrap.appendChild(label);
-		// linkWrap.appendChild(link);
-		// optionWrap.appendChild(linkWrap);
-		// optionWrap.appendChild(labelWrap);
-		optionWrap.appendChild(eventBtnWrap);
+		optionWrap.appendChild(singleEventBtnsWrap);
+		optionWrap.appendChild(multipleEventBtnsWrap);
 		optionWrap.appendChild(sizeWrap);
 		sizeWrap.innerHTML = informationTableHTMLStr("-", "-", "-")
 		loadImage(src).then(img => {
 			fetch(src).then(res => res.blob()).then(blob => sizeWrap.innerHTML =
 				informationTableHTMLStr(img.height, img.width, blob.size));
-
+			wrapper.setAttribute("data-img", src);
+			imgBuff[src] = img;
 			const aspectRatio = img.width / img.height;
 			const height = 90;// parseInt(heightInput.value, 10);
 			const width = 120;//parseInt(widthInput.value, 10);
@@ -136,47 +182,54 @@
 
 			const ctx = canvas.getContext('2d');
 			ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-			//
-			// checkbox.addEventListener('change', () => {
-			// 	if (!checkbox.checked) return;
-			// 	const canvas = document.createElement('canvas');
-			// 	const height = parseInt(heightInput.value, 10);
-			// 	const width = parseInt(widthInput.value, 10);
-			// 	const scale = Math.min(width / img.width, height / img.height);
-			//
-			// 	canvas.width = img.width * scale;
-			// 	canvas.height = img.height * scale;
-			// 	const ctx = canvas.getContext('2d');
-			// 	ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-			// 	const dataURL = canvas.toDataURL('image/png');
-			// 	downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
-			// });
 
 			customSizeEvBtn.addEventListener('click', () => {
-				const canvas = document.createElement('canvas');
-				const height = parseInt(heightInput.value, 10);
-				const width = parseInt(widthInput.value, 10);
-				const scale = Math.min(width / img.width, height / img.height);
-
-				canvas.width = img.width * scale;
-				canvas.height = img.height * scale;
-				const ctx = canvas.getContext('2d');
-				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-				const dataURL = canvas.toDataURL('image/png');
-				downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
+				resizeDownload(img, index)
 			});
 			originalSizeEvBtn.addEventListener('click', () => {
-				const canvas = document.createElement('canvas');
-				canvas.width = img.width;
-				canvas.height = img.height;
-				const ctx = canvas.getContext('2d');
-				ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-				const dataURL = canvas.toDataURL('image/png');
-				downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
+				originalDownload(img, index)
 			});
+
+			canvasWarp.addEventListener("click", (ev) => {
+				if (mode !== MODE_MULTIPLE) {
+					return
+				}
+				let imgg = canvasWarp.closest(".image-group")
+				if (imgg.classList.contains("selected")) {
+					imgg.classList.remove("selected")
+				} else {
+					imgg.classList.add("selected")
+				}
+			})
 		});
 
 		return wrapper;
+	}
+
+	function resizeDownload(img, index) {
+		const canvas = document.createElement('canvas');
+		const height = parseInt(heightInput.value, 10);
+		const width = parseInt(widthInput.value, 10);
+		const scale = Math.min(width / img.width, height / img.height);
+
+		canvas.width = img.width * scale;
+		canvas.height = img.height * scale;
+		const ctx = canvas.getContext('2d');
+		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+		const dataURL = canvas.toDataURL('image/png');
+		downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
+
+
+	}
+
+	function originalDownload(img, index) {
+		const canvas = document.createElement('canvas');
+		canvas.width = img.width;
+		canvas.height = img.height;
+		const ctx = canvas.getContext('2d');
+		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+		const dataURL = canvas.toDataURL('image/png');
+		downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
 	}
 
 	function informationTableHTMLStr(height, width, byte) {
@@ -216,6 +269,7 @@
 
 		if (currentIndex >= imageArray.length) {
 			nextButton.style.display = 'none';
+			maxButton.style.display = 'none';
 		}
 	}
 })()

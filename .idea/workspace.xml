@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/img/check.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,26 +32,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1" />
   <component name="ProjectId" id="2OMGBJx3nCqsQBKHZWWF20DiqG6" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\luna\app\git\page_image_downloader" />
@@ -65,7 +72,9 @@
       <workItem from="1681432884521" duration="8342000" />
       <workItem from="1682295582162" duration="5714000" />
       <workItem from="1682379852551" duration="3198000" />
-      <workItem from="1682383635883" duration="8886000" />
+      <workItem from="1682383635883" duration="10667000" />
+      <workItem from="1682903437148" duration="275000" />
+      <workItem from="1682903913590" duration="4565000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -130,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682400586390</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="プロトコル指定がないPathが指定されていた場合に、現在のプロトコルを取得して追加するように変更">
+      <created>1682402480366</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682402480366</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,34 +159,7 @@
     <MESSAGE value="ダウンロードサイズが小さいままでされてしまう点を修正" />
     <MESSAGE value="サイズを記憶するようにした" />
     <MESSAGE value="ダウンロード実行ボタンを追加。チェックボックス廃止。&#10;原寸ダウンロード追加。" />
-    <option name="LAST_COMMIT_MESSAGE" value="ダウンロード実行ボタンを追加。チェックボックス廃止。&#10;原寸ダウンロード追加。" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="468" y="143" key="CommitChangelistDialog2" timestamp="1682400585793">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="-1385" y="164" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1682386391088" />
-    <state x="468" y="143" key="CommitChangelistDialog2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682400585793" />
-    <state x="481" y="296" key="EditFileWatcherDialog" timestamp="1681431621555">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="481" y="296" key="EditFileWatcherDialog/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1681431621555" />
-    <state x="620" y="273" key="FileChooserDialogImpl" timestamp="1682303027257">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="620" y="273" key="FileChooserDialogImpl/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682303027257" />
-    <state x="431" y="250" key="Vcs.Push.Dialog.v2" timestamp="1682400588594">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="-1427" y="287" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1682386392829" />
-    <state x="431" y="250" key="Vcs.Push.Dialog.v2/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682400588594" />
-    <state x="-1231" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1682385183452">
-      <screen x="-1920" y="0" width="1920" height="1160" />
-    </state>
-    <state x="-1231" y="502" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010/-1920.0.1920.1160@-1920.0.1920.1160" timestamp="1682385183452" />
-    <state x="496" y="233" key="run.anything.popup" timestamp="1682394663615">
-      <screen x="0" y="0" width="1680" height="1010" />
-    </state>
-    <state x="496" y="233" key="run.anything.popup/0.0.1680.1010/-1920.0.1920.1160@0.0.1680.1010" timestamp="1682394663615" />
+    <MESSAGE value="プロトコル指定がないPathが指定されていた場合に、現在のプロトコルを取得して追加するように変更" />
+    <option name="LAST_COMMIT_MESSAGE" value="プロトコル指定がないPathが指定されていた場合に、現在のプロトコルを取得して追加するように変更" />
   </component>
 </project>
