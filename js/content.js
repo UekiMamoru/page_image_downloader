@@ -81,7 +81,7 @@
 			const lazyLoadSrc = imgElement.src || imgElement.dataset.src || imgElement.getAttribute('data-src');
 			if (lazyLoadSrc) {
 				const extensions =filterTwImgExtensions(lazyLoadSrc);
-				if (extensions.extension) {
+				if (extensions&&extensions.extension) {
 					imageSources[extensions.extension].add(extensions.transformSrc);
 				}
 			}

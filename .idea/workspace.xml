@@ -73,7 +73,8 @@
       <workItem from="1682903437148" duration="275000" />
       <workItem from="1682903913590" duration="5285000" />
       <workItem from="1682921627257" duration="581000" />
-      <workItem from="1682982613424" duration="3225000" />
+      <workItem from="1682982613424" duration="5729000" />
+      <workItem from="1683013967592" duration="53000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -159,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682922006514</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Twitter画像と動画のポスターを取得するようなサンプルを追加">
+      <created>1682989328197</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682989328197</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +183,7 @@
     <MESSAGE value="プロトコル指定がないPathが指定されていた場合に、現在のプロトコルを取得して追加するように変更" />
     <MESSAGE value="複数選択を実装。" />
     <MESSAGE value="複数選択時の表示上のバグと見た目を修正" />
-    <option name="LAST_COMMIT_MESSAGE" value="複数選択時の表示上のバグと見た目を修正" />
+    <MESSAGE value="Twitter画像と動画のポスターを取得するようなサンプルを追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="Twitter画像と動画のポスターを取得するようなサンプルを追加" />
   </component>
 </project>
