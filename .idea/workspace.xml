@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +72,8 @@
       <workItem from="1682383635883" duration="10667000" />
       <workItem from="1682903437148" duration="275000" />
       <workItem from="1682903913590" duration="5285000" />
-      <workItem from="1682921627257" duration="339000" />
+      <workItem from="1682921627257" duration="581000" />
+      <workItem from="1682982613424" duration="3225000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -151,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682908683919</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="複数選択時の表示上のバグと見た目を修正">
+      <created>1682922006514</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682922006514</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +174,7 @@
     <MESSAGE value="ダウンロード実行ボタンを追加。チェックボックス廃止。&#10;原寸ダウンロード追加。" />
     <MESSAGE value="プロトコル指定がないPathが指定されていた場合に、現在のプロトコルを取得して追加するように変更" />
     <MESSAGE value="複数選択を実装。" />
-    <option name="LAST_COMMIT_MESSAGE" value="複数選択を実装。" />
+    <MESSAGE value="複数選択時の表示上のバグと見た目を修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="複数選択時の表示上のバグと見た目を修正" />
   </component>
 </project>

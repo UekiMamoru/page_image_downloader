@@ -7,7 +7,7 @@
 		for (const ext of imageExtensions) {
 			imageSources[ext] = new Set();
 		}
-
+		const videoElements = document.getElementsByTagName('video');
 		// imgタグの画像
 		const imgElements = document.getElementsByTagName('img');
 		for (const imgElement of imgElements) {
@@ -62,8 +62,74 @@
 				}
 			}
 		}
+		// 動画のポスター
+		for (const videoElement of videoElements) {
+			const posterSrc = videoElement.getAttribute("poster")
+			if (posterSrc) {
+				const extension =filterImageExtensions(posterSrc.split('.').pop().toLowerCase());
+				if (extension) {
+					imageSources[extension].add(bindProtocol(posterSrc));
+				}
+			}
+		}
 
+
+		// ツイッター画像
+		// format
+		// https://pbs.twimg.com/media/FvCgmV0aYAQTQKf?format=jpg&amp;name=large
+		for (const imgElement of imgElements) {
+			const lazyLoadSrc = imgElement.src || imgElement.dataset.src || imgElement.getAttribute('data-src');
+			if (lazyLoadSrc) {
+				const extensions =filterTwImgExtensions(lazyLoadSrc);
+				if (extensions.extension) {
+					imageSources[extensions.extension].add(extensions.transformSrc);
+				}
+			}
+		}
 		return imageSources;
+	}
+
+	function filterTwImgExtensions(src = ""){
+		let parsedUrl =parseURL(src)
+		let extension = null
+		let transformSrc = "";
+		if(parsedUrl.query){
+			let query = parsedUrl.query;
+			let formatKey = Object.keys(query).find(key=>key==="format");
+			if(!formatKey){
+				return extension;
+			}
+			extension = query[formatKey];
+			query.name = "large";
+			transformSrc=parsedUrl.uri
+			let queryString = "?";
+			let queries = []
+			Object.keys(query).reduce((arr,key)=>{arr.push(`${key}=${query[key]}`);return arr},queries);
+			queryString += queries.join("&")
+			transformSrc+=queryString;
+		}
+		return {extension,transformSrc};
+	}
+
+	/**
+	 *
+	 * @param {string} url
+	 * @returns {{query: {}, uri: string}}
+	 */
+	function parseURL(url ) {
+		const urlObj = new URL(url);
+		const uri = urlObj.origin + urlObj.pathname;
+		const queryParams = new URLSearchParams(urlObj.search);
+
+		const query = {};
+		for (const [key, value] of queryParams.entries()) {
+			query[key] = value;
+		}
+
+		return {
+			uri: uri,
+			query: Object.keys(query).length?query:null
+		};
 	}
 
 	function filterImageExtensions(str = ""){
