@@ -131,6 +131,10 @@
 		link.href = src;
 		link.target = '_blank';
 		link.textContent = '元画像を表示';
+		link.addEventListener("click", (e) => {
+			e.preventDefault();
+			chrome.tabs.create({url: e.target.href, active: false})
+		})
 
 		const originalSizeEvBtn = document.createElement("div");
 		originalSizeEvBtn.textContent = `元画像DL`;

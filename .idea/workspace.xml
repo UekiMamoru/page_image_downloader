@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/option/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/option/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,8 @@
       <workItem from="1682903913590" duration="5285000" />
       <workItem from="1682921627257" duration="581000" />
       <workItem from="1682982613424" duration="5729000" />
-      <workItem from="1683013967592" duration="53000" />
+      <workItem from="1683013967592" duration="664000" />
+      <workItem from="1683501053605" duration="1188000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -167,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682989328197</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Twitter画像と動画のポスターを取得するようなサンプルを追加">
+      <created>1683014027989</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683014027989</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
