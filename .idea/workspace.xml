@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/option/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/option/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,8 @@
       <workItem from="1682921627257" duration="581000" />
       <workItem from="1682982613424" duration="5729000" />
       <workItem from="1683013967592" duration="664000" />
-      <workItem from="1683501053605" duration="1188000" />
+      <workItem from="1683501053605" duration="1514000" />
+      <workItem from="1683514405616" duration="3096000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -176,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683014027989</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="元画像のリンクを別タブで開き、新しいタブで開かないようにした">
+      <created>1683502574848</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683502574848</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +200,7 @@
     <MESSAGE value="複数選択を実装。" />
     <MESSAGE value="複数選択時の表示上のバグと見た目を修正" />
     <MESSAGE value="Twitter画像と動画のポスターを取得するようなサンプルを追加" />
-    <option name="LAST_COMMIT_MESSAGE" value="Twitter画像と動画のポスターを取得するようなサンプルを追加" />
+    <MESSAGE value="元画像のリンクを別タブで開き、新しいタブで開かないようにした" />
+    <option name="LAST_COMMIT_MESSAGE" value="元画像のリンクを別タブで開き、新しいタブで開かないようにした" />
   </component>
 </project>

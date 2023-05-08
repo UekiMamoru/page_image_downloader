@@ -221,11 +221,26 @@
 		const ctx = canvas.getContext('2d');
 		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 		const dataURL = canvas.toDataURL('image/png');
-		downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
+		try {
+			let baseName = file.value ? file.value : "image"
+			let fileName=createFileName(baseName);
+			downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${fileName}` + (index + 1) + ".png")
+		}catch (e){
+			alert(e.message)
+		}
 
 
 	}
 
+
+	function createFileName(name = ""){
+		return createDateString()+name
+	}
+
+	function createDateString(){
+		let d = new Date();
+		return `${d.getFullYear()}${d.getMonth()<=10?"0"+d.getMonth()+1:d.getMonth()+1}${d.getDate()<10?"0"+d.getDate():d.getDate()}_${d.getHours()<10?"0"+d.getHours():d.getHours()}${d.getMinutes()<10?"0"+d.getMinutes():d.getMinutes()}${d.getSeconds()<10?"0"+d.getSeconds():d.getSeconds()}_`
+	}
 	function originalDownload(img, index) {
 		const canvas = document.createElement('canvas');
 		canvas.width = img.width;
@@ -233,7 +248,12 @@
 		const ctx = canvas.getContext('2d');
 		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 		const dataURL = canvas.toDataURL('image/png');
-		downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
+
+
+		let baseName = file.value ? file.value : "image"
+		let fileName=createFileName(baseName);
+		downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${fileName}` + (index + 1) + ".png")
+		// downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
 	}
 
 	function informationTableHTMLStr(height, width, byte) {
