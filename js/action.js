@@ -237,9 +237,10 @@
 		return createDateString()+name
 	}
 
+
 	function createDateString(){
 		let d = new Date();
-		return `${d.getFullYear()}${d.getMonth()<=10?"0"+d.getMonth()+1:d.getMonth()+1}${d.getDate()<10?"0"+d.getDate():d.getDate()}_${d.getHours()<10?"0"+d.getHours():d.getHours()}${d.getMinutes()<10?"0"+d.getMinutes():d.getMinutes()}${d.getSeconds()<10?"0"+d.getSeconds():d.getSeconds()}_`
+		return `${d.getFullYear()}${d.getMonth()<=10?"0"+(d.getMonth()+1):d.getMonth()+1}${d.getDate()<10?"0"+d.getDate():d.getDate()}_${d.getHours()<10?"0"+d.getHours():d.getHours()}${d.getMinutes()<10?"0"+d.getMinutes():d.getMinutes()}${d.getSeconds()<10?"0"+d.getSeconds():d.getSeconds()}_`
 	}
 	function originalDownload(img, index) {
 		const canvas = document.createElement('canvas');
