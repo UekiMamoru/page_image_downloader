@@ -3,8 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <title>設定ページ</title>
+    <style>
+        .formats{
+            display: flex;
+            gap: 6px;
+        }
+        .formats_item{
+            background-color: #00bcd4;
+            color: white;
+            padding: 3px;
+            cursor: pointer;
+            transition: opacity .3s;
+        }
+        .formats_item:hover{
+            opacity: 0.5;
+        }
+
+
+        .newFormat_field{
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .newFormat_btn{
+            background-color: #0ed400;
+            color: white;
+            padding: 3px;
+            cursor: pointer;
+            transition: opacity .3s , background-color 0.3s;
+
+        }
+        .newFormat_btn:hover{
+            background-color: #f18484;
+            opacity: .7;
+        }
+        .formatBlock{
+            display: flex;
+            gap: 1em;
+            padding-bottom: 6px;
+            align-items: center;
+        }
+        input[type=text]{
+            border-radius: 6px;
+            border: solid 1px #ccc;
+            padding: 6px;
+            font-size: 1.1em;
+        }
+        h2,h3{
+            border-left: solid 5px #00bcd4;
+            padding-left: .5em;
+        }
+        .delete,
+        .edit{
+            padding: 3px 0.5em;
+            cursor: pointer;
+            background-color: #0ed400;
+            color: white;
+        }
+        .delete{
+            background-color: #ff1f1f;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            border: solid 1px #ccc;
+        }
+        thead th{
+            background-color: #e5e4e4;
+            font-weight: normal;
+        }
+        tbody tr td:first-child{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<p>現在はβ版です。設定項目はありません。</p>
+<h2>
+    ファイル名保存フォーマット
+</h2>
+<p>現在利用中のファイル名フォーマットは[<span>1</span>.]です。</p>
+<fieldset class="newFormat">
+    <div>
+        <div  class="formatBlock">
+            <div>
+                <span>時間</span>:
+            </div>
+            <div class="formats" id="dateFormatList">
+
+            </div>
+            <div>
+                <span>番号</span>:
+            </div>
+            <div class="formats" id="indexFormatList">
+
+            </div>
+
+        </div>
+
+    </div>
+    <hr>
+    <div class="newFormat_field">
+
+        <div><label>名称:<input class="name" type="text"  id="newFormatName"></label></div>
+        <div><label>フォーマット:<input class="format" id="newFormatText" type="text"></label></div>
+        <div><div class="newFormat_btn" id="addFormat">フォーマットを追加</div></div>
+    </div>
+    <p style="font-size: 0.8em;color: red;margin: 0;">※ファイル名に使えない文字は登録時に削除されます。</p>
+
+</fieldset>
+<h3>登録されているファイル名フォーマット一覧</h3>
+<div id="formatField">
+    <table>
+        <thead>
+        <tr>
+            <th>
+                利用中
+            </th>
+            <th>
+                番号
+            </th>
+            <th>
+                名称
+            </th>
+            <th>
+                フォーマット
+            </th>
+            <th>
+                編集
+            </th>
+            <th>
+                削除
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><label><input type="checkbox" name="useFormat"></label></td>
+            <td>1.</td>
+            <td><label><input type="text" class="name" data-name="" value="デフォルト"></label></td>
+            <td><label><input type="text" class="format" value="image{{index}}"></label></td>
+            <td><div class="edit" data-idx="1">編集</div></td>
+            <td><div class="delete" data-idx="1">削除</div></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../js/option.js"></script>
+
 </body>
+
 </html>

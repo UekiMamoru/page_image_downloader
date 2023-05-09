@@ -4,11 +4,10 @@ module.exports = {
 
 	//エントリポイントのJavaScript
 	entry: {
-		"contents_script": './development/js/mvvm/main/main.js',
-		"background": './development/js/mvvm/main/background/main.js'
+		"option": './dev/js/option/option.js'
 
 	},
-	mode: "production",
+	mode: "development",
 	devtool: false,
 	output: {
 		filename: "[name].js",
