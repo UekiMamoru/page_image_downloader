@@ -119,19 +119,27 @@
 	 * @returns {{query: {}, uri: string}}
 	 */
 	function parseURL(url ) {
-		const urlObj = new URL(url);
-		const uri = urlObj.origin + urlObj.pathname;
-		const queryParams = new URLSearchParams(urlObj.search);
 
-		const query = {};
-		for (const [key, value] of queryParams.entries()) {
-			query[key] = value;
+		const returner = {
+			uri: ""
+			, query: null
 		}
+		try {
 
-		return {
-			uri: uri,
-			query: Object.keys(query).length?query:null
-		};
+			const urlObj = new URL(url);
+			const uri = urlObj.origin + urlObj.pathname;
+			const queryParams = new URLSearchParams(urlObj.search);
+
+			const query = {};
+			for (const [key, value] of queryParams.entries()) {
+				query[key] = value;
+			}
+			returner.uri = uri;
+			returner.query = Object.keys(query).length ? query : null;
+		} catch (e) {
+			console.log(url);
+		}
+		return returner;
 	}
 
 	function filterImageExtensions(str = ""){

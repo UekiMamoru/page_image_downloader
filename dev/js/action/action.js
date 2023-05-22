@@ -16,12 +16,46 @@ import {TemplateTextReplacer} from "../common/TemplateTextReplacer";
 	const changeSize = document.getElementById('changeSize');
 	const folder = document.getElementById('folder');
 	const file = document.getElementById('file');
+	const fileNameTemplateSelect = document.getElementById("fileNameTemplate")
 	let currentIndex = 0;
 	const imagesField = document.getElementById('imagesField');
 	const maxButton = document.getElementById('maxButton')
 	const multipleDLBtnWrap = document.querySelector(".fixFooter .eventBtnWrap");
 	const multipleDLBtnDef = multipleDLBtnWrap.querySelector(".def")
 	const multipleDLBtnResize = multipleDLBtnWrap.querySelector(".resize")
+
+	const  toSetting = document.querySelector("#toSetting")
+	toSetting.addEventListener("click", (e) => {
+		e.preventDefault();
+		chrome.tabs.create({url: chrome.runtime.getURL("option/index.html")})
+	})
+
+	let templateFileNameFormatList = []
+	// 登録フォーマットを取得
+	sendFormatData().then(list=>{
+		// 登録フォーマットをSELECTで表示。
+		templateFileNameFormatList= list
+		fileNameTemplateSelect.innerHTML =createFileNameTemplateOptionHTMLStr(templateFileNameFormatList)
+		let act = templateFileNameFormatList.find(d=>d.active)
+		if(!act){
+			act = templateFileNameFormatList[0];
+		}
+		if(act){
+			file.value = act.format
+		}
+	})
+
+	fileNameTemplateSelect.addEventListener("change",()=>{
+		let value  = fileNameTemplateSelect.value
+		file.value = value
+	})
+	async function sendFormatData(type = "get", data = []) {
+		let result = await chrome.runtime.sendMessage({fileFormats: true, type, data});
+		return result;
+	}
+
+
+
 	multipleDLBtnDef.addEventListener("click", () => {
 		if (confirm("選択画像を[ 元サイズ ]で一括ダウンロードしてよろしいですか？")) {
 			let imageGroups = imagesField.querySelectorAll(".image-group");
@@ -226,8 +260,8 @@ import {TemplateTextReplacer} from "../common/TemplateTextReplacer";
 		const dataURL = canvas.toDataURL('image/png');
 		try {
 			let baseName = file.value ? file.value : "image"
-			let fileName=createFileName(baseName);
-			downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${fileName}` + (index + 1) + ".png")
+			let fileName=replaceTemplate(baseName,index+1);
+			downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${fileName}` + ".png")
 		}catch (e){
 			alert(e.message)
 		}
@@ -240,6 +274,11 @@ import {TemplateTextReplacer} from "../common/TemplateTextReplacer";
 		return createDateString()+name
 	}
 
+
+	function replaceTemplate(name , idx){
+		let r = new TemplateTextReplacer()
+		return r.replaceIndex(r.replaceDate(name),idx);
+	}
 
 	function createDateString(){
 		let d = new Date();
@@ -255,8 +294,8 @@ import {TemplateTextReplacer} from "../common/TemplateTextReplacer";
 
 
 		let baseName = file.value ? file.value : "image"
-		let fileName=createFileName(baseName);
-		downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${fileName}` + (index + 1) + ".png")
+		let fileName=replaceTemplate(baseName,index+1);
+		downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${fileName}` + ".png")
 		// downloadImage(dataURL, `${folder.value ? folder.value + "/" : ""}${file.value ? file.value : "image"}` + (index + 1) + ".png")
 	}
 
@@ -299,5 +338,15 @@ import {TemplateTextReplacer} from "../common/TemplateTextReplacer";
 			nextButton.style.display = 'none';
 			maxButton.style.display = 'none';
 		}
+	}
+
+	function createFileNameTemplateOptionHTMLStr(templateObjects=[{name:"",format:"",active:false}]){
+		let temp = ""
+		templateObjects.forEach((templateObject)=>{
+			temp+=`
+			<option value="${templateObject.format}" ${templateObject.active?"selected":""}>${templateObject.name}</option>
+			`
+		})
+		return temp;
 	}
 })()

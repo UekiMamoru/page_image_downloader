@@ -56,7 +56,7 @@
 		for (const imgElement of imgElements) {
 			const lazyLoadSrc = imgElement.dataset.src || imgElement.getAttribute('data-src');
 			if (lazyLoadSrc) {
-				const extension =filterImageExtensions(lazyLoadSrc.split('.').pop().toLowerCase());
+				const extension = filterImageExtensions(lazyLoadSrc.split('.').pop().toLowerCase());
 				if (extension) {
 					imageSources[extension].add(bindProtocol(lazyLoadSrc));
 				}
@@ -66,7 +66,7 @@
 		for (const videoElement of videoElements) {
 			const posterSrc = videoElement.getAttribute("poster")
 			if (posterSrc) {
-				const extension =filterImageExtensions(posterSrc.split('.').pop().toLowerCase());
+				const extension = filterImageExtensions(posterSrc.split('.').pop().toLowerCase());
 				if (extension) {
 					imageSources[extension].add(bindProtocol(posterSrc));
 				}
@@ -80,8 +80,8 @@
 		for (const imgElement of imgElements) {
 			const lazyLoadSrc = imgElement.src || imgElement.dataset.src || imgElement.getAttribute('data-src');
 			if (lazyLoadSrc) {
-				const extensions =filterTwImgExtensions(lazyLoadSrc);
-				if (extensions&&extensions.extension) {
+				const extensions = filterTwImgExtensions(lazyLoadSrc);
+				if (extensions && extensions.extension) {
 					imageSources[extensions.extension].add(extensions.transformSrc);
 				}
 			}
@@ -89,26 +89,29 @@
 		return imageSources;
 	}
 
-	function filterTwImgExtensions(src = ""){
-		let parsedUrl =parseURL(src)
+	function filterTwImgExtensions(src = "") {
+		let parsedUrl = parseURL(src)
 		let extension = null
 		let transformSrc = "";
-		if(parsedUrl.query){
+		if (parsedUrl.query) {
 			let query = parsedUrl.query;
-			let formatKey = Object.keys(query).find(key=>key==="format");
-			if(!formatKey){
+			let formatKey = Object.keys(query).find(key => key === "format");
+			if (!formatKey) {
 				return extension;
 			}
 			extension = query[formatKey];
 			query.name = "large";
-			transformSrc=parsedUrl.uri
+			transformSrc = parsedUrl.uri
 			let queryString = "?";
 			let queries = []
-			Object.keys(query).reduce((arr,key)=>{arr.push(`${key}=${query[key]}`);return arr},queries);
+			Object.keys(query).reduce((arr, key) => {
+				arr.push(`${key}=${query[key]}`);
+				return arr
+			}, queries);
 			queryString += queries.join("&")
-			transformSrc+=queryString;
+			transformSrc += queryString;
 		}
-		return {extension,transformSrc};
+		return {extension, transformSrc};
 	}
 
 	/**
@@ -116,33 +119,40 @@
 	 * @param {string} url
 	 * @returns {{query: {}, uri: string}}
 	 */
-	function parseURL(url ) {
-		const urlObj = new URL(url);
-		const uri = urlObj.origin + urlObj.pathname;
-		const queryParams = new URLSearchParams(urlObj.search);
-
-		const query = {};
-		for (const [key, value] of queryParams.entries()) {
-			query[key] = value;
+	function parseURL(url) {
+		const returner = {
+			uri: ""
+			, query: null
 		}
+		try {
 
-		return {
-			uri: uri,
-			query: Object.keys(query).length?query:null
-		};
+			const urlObj = new URL(url);
+			const uri = urlObj.origin + urlObj.pathname;
+			const queryParams = new URLSearchParams(urlObj.search);
+
+			const query = {};
+			for (const [key, value] of queryParams.entries()) {
+				query[key] = value;
+			}
+			returner.uri = uri;
+			returner.query = Object.keys(query).length ? query : null;
+		} catch (e) {
+			console.log(url);
+		}
+		return returner;
 	}
 
-	function filterImageExtensions(str = ""){
+	function filterImageExtensions(str = "") {
 		let checkStr = str;
-		if(~str.indexOf("?")){
+		if (~str.indexOf("?")) {
 			checkStr = str.split("?")[0]
 		}
-		return imageExtensions.includes(checkStr)?checkStr:false;
+		return imageExtensions.includes(checkStr) ? checkStr : false;
 	}
 
-	function bindProtocol(src = ""){
-		if(src.match(/^\/\//)){
-			return  window.location.protocol+src;
+	function bindProtocol(src = "") {
+		if (src.match(/^\/\//)) {
+			return window.location.protocol + src;
 		}
 		return src;
 	}
@@ -155,7 +165,7 @@
 			Object.keys(imgPathObject).forEach(key => {
 				imageList = new Set([...imageList, ...imgPathObject[key]])
 			})
-			sendResponse({imgPathList:Array.from(imageList)})
+			sendResponse({imgPathList: Array.from(imageList)})
 		}
 		return true;
 	})

@@ -4,7 +4,8 @@ module.exports = {
 
 	//エントリポイントのJavaScript
 	entry: {
-		"option": './dev/js/option/option.js'
+		"option": './dev/js/option/option.js',
+		"action": './dev/js/action/action.js'
 
 	},
 	mode: "development",

@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/background_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/background_worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/js/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/action/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/js/background/background_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/background/background_worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/js/content/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/content/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/js/option/option.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/option/option.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/option.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/option/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/option/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +59,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/luna/app/git/page_image_downloader/dev/js/content",
+    "last_opened_file_path": "E:/luna/app/git/page_image_downloader",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,9 +71,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\luna\app\git\page_image_downloader" />
       <recent name="E:\luna\app\git\page_image_downloader\dev\js\content" />
       <recent name="E:\luna\app\git\page_image_downloader\dev\js\action" />
-      <recent name="E:\luna\app\git\page_image_downloader" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -85,7 +98,8 @@
       <workItem from="1683013967592" duration="664000" />
       <workItem from="1683501053605" duration="1514000" />
       <workItem from="1683514405616" duration="8855000" />
-      <workItem from="1683587275556" duration="10205000" />
+      <workItem from="1683587275556" duration="11903000" />
+      <workItem from="1684712312847" duration="11535000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -213,7 +227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683597682797</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="保存ファイル名のカスタマイズが出来るような機能を追加中">
+      <created>1683604821135</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683604821135</updated>
+    </task>
+    <task id="LOCAL-00020" summary="保存ファイル名のカスタマイズが出来るような機能を追加中">
+      <created>1683604928713</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1683604928713</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

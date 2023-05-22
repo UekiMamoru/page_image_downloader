@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <title>設定ページ</title>
     <style>
+        :root{
+            --main-submit-btn-bk-col: #23d317;
+            --main-err-btn-bk-col: #dc1c1c;
+
+        }
+        .format{
+            min-width: 23em;
+        }
         .formats{
             display: flex;
             gap: 6px;
@@ -26,7 +34,7 @@
             align-items: center;
         }
         .newFormat_btn{
-            background-color: #0ed400;
+            background-color: var(--main-submit-btn-bk-col);
             color: white;
             padding: 3px;
             cursor: pointer;
@@ -54,14 +62,15 @@
             padding-left: .5em;
         }
         .delete,
-        .edit{
+        .edit,
+        .update{
             padding: 3px 0.5em;
             cursor: pointer;
-            background-color: #0ed400;
+            background-color: var(--main-submit-btn-bk-col);
             color: white;
         }
         .delete{
-            background-color: #ff1f1f;
+            background-color:  var(--main-err-btn-bk-col);
         }
         table{
             border-collapse: collapse;
@@ -82,7 +91,6 @@
 <h2>
     ファイル名保存フォーマット
 </h2>
-<p>現在利用中のファイル名フォーマットは[<span>1</span>.]です。</p>
 <fieldset class="newFormat">
     <div>
         <div  class="formatBlock">
@@ -118,9 +126,6 @@
         <thead>
         <tr>
             <th>
-                利用中
-            </th>
-            <th>
                 番号
             </th>
             <th>
@@ -130,7 +135,7 @@
                 フォーマット
             </th>
             <th>
-                編集
+                更新
             </th>
             <th>
                 削除
@@ -138,14 +143,6 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><label><input type="checkbox" name="useFormat"></label></td>
-            <td>1.</td>
-            <td><label><input type="text" class="name" data-name="" value="デフォルト"></label></td>
-            <td><label><input type="text" class="format" value="image{{index}}"></label></td>
-            <td><div class="edit" data-idx="1">編集</div></td>
-            <td><div class="delete" data-idx="1">削除</div></td>
-        </tr>
         </tbody>
     </table>
 </div>
