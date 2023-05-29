@@ -2,7 +2,7 @@ import {TemplateTextReplacer} from "../common/TemplateTextReplacer";
 import {InputInsertTemplateText} from "../common/InputInsertTemplateText";
 
 (() => {
-
+	const MAX_TEMPLATE_SIZE = 5;
 	const ERROR_PERFECT_MATCH_REG_EXPS =
 		[/^COM0$/i, /^COM1$/i, /^COM2$/i, /^COM3$/i, /^COM4$/i, /^COM5$/i, /^COM6$/i, /^COM7$/i, /^COM8$/i, /^COM9$/i, /^LPT0$/i, /^LPT1$/i, /^LPT2$/i, /^LPT3$/i, /^LPT4$/i, /^LPT5$/i, /^LPT6$/i, /^LPT7$/i, /^LPT8$/i, /^LPT9$/i, /^CON$/i, /^PRN$/i, /^AUX$/i, /^NUL$/i, /^CLOCK\$$/i];
 	const ERROR_SYMBOLS = ["\\", "/", ":", "*", "?", '"', ">", "<", "|"];
@@ -34,6 +34,11 @@ import {InputInsertTemplateText} from "../common/InputInsertTemplateText";
 
 	const addFormat = document.getElementById("addFormat");
 	addFormat.addEventListener("click", () => {
+
+		if (list.length >= MAX_TEMPLATE_SIZE) {
+			alert(`${MAX_TEMPLATE_SIZE}件までしか登録できません。`);
+			return;
+		}
 		// 入力されたフォーマットを保存
 		let format =
 			createFormatObject(
@@ -80,7 +85,7 @@ import {InputInsertTemplateText} from "../common/InputInsertTemplateText";
 			let index = Number.parseInt(target.getAttribute("data-idx"));
 			if (index === null) return;
 			if (confirm("完全に削除してよろしいですか？")) {
-				deleteFormatData(index).then(()=>{
+				deleteFormatData(index).then(() => {
 					createRegisterFormatList(tempFormatObjects);
 				});
 			}
@@ -93,7 +98,7 @@ import {InputInsertTemplateText} from "../common/InputInsertTemplateText";
 	})
 
 
-	function createFormatObject(nameNode, dataNode,activeNode) {
+	function createFormatObject(nameNode, dataNode, activeNode) {
 
 		let format = {name: "", format: "", hash: "", active: false};
 		format.name = nameNode.value;
@@ -122,7 +127,7 @@ import {InputInsertTemplateText} from "../common/InputInsertTemplateText";
 		}
 		// 登録
 		format.hash = createHash(format.name, format.format);
-		if(activeNode){
+		if (activeNode) {
 			format.active = activeNode.checked;
 		}
 		return format;
@@ -143,7 +148,7 @@ import {InputInsertTemplateText} from "../common/InputInsertTemplateText";
 		return result;
 	}
 
-	 function replaceSymbols(str) {
+	function replaceSymbols(str) {
 		let temp = str;
 		ERROR_SYMBOLS.forEach(symb => {
 			temp = temp.replaceAll(symb, "");
@@ -221,7 +226,7 @@ import {InputInsertTemplateText} from "../common/InputInsertTemplateText";
 		
         <tr class="dataRow">
 <!--            <td><label><input data-idx="${index}" class="isActivePattern" type="radio" name="useFormat" ${formatData.active ? "checked" : ""}></label></td>-->
-            <td>${index+1}.</td>
+            <td>${index + 1}.</td>
             <td><label><input type="text" class="name" data-name="" value="${formatData.name}"></label></td>
             <td><label><input type="text" class="format" value="${formatData.format}"></label></td>
             <td><div class="update" data-idx="${index}">更新</div></td>

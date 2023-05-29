@@ -6,20 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/background_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/background_worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/js/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/action/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/js/background/background_worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/background/background_worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/js/content/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/content/content.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/js/option/option.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/option/option.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/option.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/option/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/option/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +47,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/luna/app/git/page_image_downloader",
+    "last_opened_file_path": "E:/home/price2alert",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,7 +87,8 @@
       <workItem from="1683501053605" duration="1514000" />
       <workItem from="1683514405616" duration="8855000" />
       <workItem from="1683587275556" duration="11903000" />
-      <workItem from="1684712312847" duration="11535000" />
+      <workItem from="1684712312847" duration="13931000" />
+      <workItem from="1685334649236" duration="1498000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -241,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683604928713</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="保存ファイル名のカスタマイズが出来るような機能を追加">
+      <created>1684724166860</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1684724166860</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +258,7 @@
     <MESSAGE value="画像ダウンロード時に年月日時分秒が入るようにした" />
     <MESSAGE value="画像ダウンロード時に年月日時分秒の月がずれていた点を修正" />
     <MESSAGE value="保存ファイル名のカスタマイズが出来るような機能を追加中" />
-    <option name="LAST_COMMIT_MESSAGE" value="保存ファイル名のカスタマイズが出来るような機能を追加中" />
+    <MESSAGE value="保存ファイル名のカスタマイズが出来るような機能を追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="保存ファイル名のカスタマイズが出来るような機能を追加" />
   </component>
 </project>
