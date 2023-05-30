@@ -35,7 +35,7 @@ import {InputInsertTemplateText} from "../common/InputInsertTemplateText";
 	const addFormat = document.getElementById("addFormat");
 	addFormat.addEventListener("click", () => {
 
-		if (list.length >= MAX_TEMPLATE_SIZE) {
+		if (tempFormatObjects.length >= MAX_TEMPLATE_SIZE) {
 			alert(`${MAX_TEMPLATE_SIZE}件までしか登録できません。`);
 			return;
 		}
