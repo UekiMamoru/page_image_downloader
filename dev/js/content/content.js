@@ -88,9 +88,28 @@
 				}
 			}
 		}
+		// data64Image
+		for (const imgElement of imgElements) {
+			const lazyLoadSrc = imgElement.src || imgElement.dataset.src || imgElement.getAttribute('data-src');
+			if (lazyLoadSrc) {
+				const extensions =filterDataImgExtensions(lazyLoadSrc);
+				if (extensions&&extensions.extension) {
+					imageSources[extensions.extension].add(extensions.transformSrc);
+				}
+			}
+		}
 		return imageSources;
 	}
 
+	function filterDataImgExtensions(src = ""){
+		let extension = null
+		if(~src.indexOf("data:image")){
+			return  extension;
+		}
+		let transformSrc =src
+		extension ="data64";
+		return {extension,transformSrc};
+	}
 	function filterTwImgExtensions(src = ""){
 		let parsedUrl =parseURL(src)
 		let extension = null

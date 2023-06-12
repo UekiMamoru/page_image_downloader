@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/js/content/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/content/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +90,9 @@
       <workItem from="1683587275556" duration="11903000" />
       <workItem from="1684712312847" duration="13931000" />
       <workItem from="1685334649236" duration="2709000" />
-      <workItem from="1685405571757" duration="2927000" />
+      <workItem from="1685405571757" duration="3531000" />
+      <workItem from="1686194713820" duration="4319000" />
+      <workItem from="1686530274526" duration="1204000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
@@ -243,11 +248,29 @@
       <option name="project" value="LOCAL" />
       <updated>1685338365545</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="テンプレートの上限実装jsをwebpackしていなかったためwebpack化">
+      <created>1685420620624</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1685420620624</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="サンプル作成" />
@@ -266,6 +289,7 @@
     <MESSAGE value="保存ファイル名のカスタマイズが出来るような機能を追加中" />
     <MESSAGE value="保存ファイル名のカスタマイズが出来るような機能を追加" />
     <MESSAGE value="テンプレートの保存件数に上限を設けた" />
-    <option name="LAST_COMMIT_MESSAGE" value="テンプレートの保存件数に上限を設けた" />
+    <MESSAGE value="テンプレートの上限実装jsをwebpackしていなかったためwebpack化" />
+    <option name="LAST_COMMIT_MESSAGE" value="テンプレートの上限実装jsをwebpackしていなかったためwebpack化" />
   </component>
 </project>

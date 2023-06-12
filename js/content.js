@@ -1,5 +1,7 @@
 (() => {
 	const imageExtensions = ['png', 'jpg', 'jpeg'];//, 'gif', 'webp'];
+	const DATA_IMG = "data64"
+
 	function extractImageSources() {
 		const imageSources = {};
 
@@ -7,6 +9,8 @@
 		for (const ext of imageExtensions) {
 			imageSources[ext] = new Set();
 		}
+		imageSources[DATA_IMG] = new Set();
+
 		const videoElements = document.getElementsByTagName('video');
 		// imgタグの画像
 		const imgElements = document.getElementsByTagName('img');
@@ -86,7 +90,27 @@
 				}
 			}
 		}
+		// data64Image
+		for (const imgElement of imgElements) {
+			const lazyLoadSrc = imgElement.src || imgElement.dataset.src || imgElement.getAttribute('data-src');
+			if (lazyLoadSrc) {
+				const extensions = filterDataImgExtensions(lazyLoadSrc);
+				if (extensions && extensions.extension) {
+					imageSources[extensions.extension].add(extensions.transformSrc);
+				}
+			}
+		}
 		return imageSources;
+	}
+
+	function filterDataImgExtensions(src = "") {
+		let extension = null
+		if (~src.indexOf("data:image")) {
+			return extension;
+		}
+		let transformSrc = src
+		extension = DATA_IMG;
+		return {extension, transformSrc};
 	}
 
 	function filterTwImgExtensions(src = "") {
