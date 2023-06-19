@@ -5,11 +5,12 @@ module.exports = {
 	//エントリポイントのJavaScript
 	entry: {
 		"option": './dev/js/option/option.js',
-		"action": './dev/js/action/action.js'
+		"action": './dev/js/action/action.js',
+		"content": './dev/js/content/content.js'
 
 	},
 	mode: "development",
-	devtool: false,
+	devtool: "source-map",
 	output: {
 		filename: "[name].js",
 		path: path.resolve(__dirname, './js/'),

@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!***********************************!*\
+  !*** ./dev/js/content/content.js ***!
+  \***********************************/
 (() => {
 	const imageExtensions = ['png', 'jpg', 'jpeg'];//, 'gif', 'webp'];
 	const DATA_IMG = "data64"
@@ -195,3 +200,6 @@
 	})
 
 })()
+/******/ })()
+;
+//# sourceMappingURL=content.js.map
