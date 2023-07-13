@@ -117,9 +117,10 @@
             background: #ff5b5b;
             padding: 3px 3px;
             cursor: pointer;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: bold;
             transition: opacity .3s;
+            border: solid 1px transparent;
         }
 
         .eventBtnWrap > div:hover {
@@ -128,6 +129,16 @@
 
         .eventBtnWrap > div:first-child {
             background: #00bcd4;
+        }
+        .eventBtnWrap > div:nth-child(3) {
+            background: white;
+            color: #00bcd4;
+            border: solid 1px #00bcd4;
+        }
+        .eventBtnWrap > div:nth-child(4) {
+            background: white;
+            color: #ff5b5b;
+            border: solid 1px #ff5b5b;
         }
 
         .fixFooter .eventBtnWrap {
@@ -273,6 +284,8 @@
         <div class="eventBtnWrap">
             <div class="def">元サイズDL(選択)</div>
             <div class="resize">リサイズDL(選択)</div>
+            <div class="def_all">元サイズDL(全て)</div>
+            <div class="resize_all">リサイズDL(全て)</div>
         </div>
         <div class="fileTemplate">
             <select id="fileNameTemplate">

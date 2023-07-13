@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="">
+    <list default="true" id="d4e52445-9353-49a6-8754-119adba38f25" name="Default Changelist" comment="画像アセットの追加とコンパリジョン">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/js/content/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/content/content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/action/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/js/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/dev/js/action/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/content.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/option.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/option.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +100,7 @@
       <workItem from="1686194713820" duration="4319000" />
       <workItem from="1686530274526" duration="1204000" />
       <workItem from="1686544596823" duration="24000" />
+      <workItem from="1689213081083" duration="680000" />
     </task>
     <task id="LOCAL-00001" summary="サンプル作成">
       <created>1681362938244</created>
